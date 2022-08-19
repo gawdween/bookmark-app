@@ -62,5 +62,16 @@ def handle_bookmarks():
                 'updated_at': bookmark.updated_at,
             })
 
+        meta = {
+            "page": bookmarks.page,
+            'pages': bookmarks.pages,
+            'total_count': bookmarks.total,
+            'prev_page': bookmarks.prev_num,
+            'next_page': bookmarks.next_num,
+            'has_next': bookmarks.has_next,
+            'has_prev': bookmarks.has_prev,
 
-        return jsonify({'data': data}), HTTP_200_OK
+        }
+
+
+        return jsonify({'data': data, 'meta': meta}), HTTP_200_OK
